@@ -4,3 +4,13 @@ You are logged in!
   <%= f.text_field :message %>
   <%= f.submit "Tweet" %>
 <% end %>
+
+<div id="wall">
+  <h1>Your wall</h1>
+  <% @tweets.each do |tweet| %>
+    <p> 
+      <%= tweet.user.email %>:
+      <%= tweet.message %> 
+    </p>
+  <% end %>
+</div>
