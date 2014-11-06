@@ -1,1 +1,6 @@
 You are logged in!
+
+<%= form_for @tweet do |f| %>
+  <%= f.text_field :message %>
+  <%= f.submit "Tweet" %>
+<% end %>

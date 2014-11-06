@@ -5,6 +5,7 @@ Twitter4Zombies::Application.routes.draw do
   constraints Monban::Constraints::SignedIn.new do
     root "dashboards#show", as: :dashboard
     resource :session, only: [:destroy]
+    resource :tweets, only: [:create]
   end
 
   constraints Monban::Constraints::SignedOut.new do
