@@ -1,0 +1,9 @@
+<% if @users.any? %>
+  <h2>Found the following user: </h2>
+  <% @users.each do |user| %>
+    <%= user.email %>
+  <% end %>
+<% else %>
+  <h2>No matches found</h2>
+<% end %>
+

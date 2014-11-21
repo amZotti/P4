@@ -11,7 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141107092103) do
+ActiveRecord::Schema.define(version: 20141122035620) do
+
+  create_table "searches", force: true do |t|
+    t.string   "query",      null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "tweets", force: true do |t|
     t.string   "message",    null: false
@@ -21,10 +27,14 @@ ActiveRecord::Schema.define(version: 20141107092103) do
   end
 
   create_table "users", force: true do |t|
-    t.string   "email",           null: false
-    t.string   "password_digest", null: false
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.string   "email",                                                                                                         null: false
+    t.string   "password_digest",                                                                                               null: false
+    t.datetime "created_at",                                                                                                    null: false
+    t.datetime "updated_at",                                                                                                    null: false
+    t.string   "location",        default: "Please enter",                                                                      null: false
+    t.boolean  "decomposing",     default: true,                                                                                null: false
+    t.integer  "limbs_missing",   default: 0,                                                                                   null: false
+    t.string   "url",             default: "http://spiritualmusclehead.files.wordpress.com/2013/09/plants-vs-zombies-2-14.jpg", null: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

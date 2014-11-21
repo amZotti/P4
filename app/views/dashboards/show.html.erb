@@ -1,8 +1,14 @@
 You are logged in!
 
+
 <%= form_for @tweet do |f| %>
   <%= f.text_field :message %>
   <%= f.submit "Tweet" %>
+<% end %>
+
+<%= form_for @search do |f| %>
+  <%= f.text_field :query %>
+  <%= f.submit "Search" %>
 <% end %>
 
 <div id="wall">
