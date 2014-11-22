@@ -18,7 +18,7 @@
   <h1>Your wall</h1>
   <% @tweets.each do |tweet| %>
     <p> 
-      <%= tweet.user.email %>:
+      <%= link_to tweet.user.email, tweet.user %>:
       <%= tweet.message %> 
     </p>
   <% end %>

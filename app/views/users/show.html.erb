@@ -1,0 +1,25 @@
+
+<div id="user-profile">
+  <h3><%= @user.email %></h3>
+  <img src="<%= @user.url %>" height=130 width=100>
+  <ul>
+    <li>Location: <%= @user.location %></li>
+    <li>Decomposing: <%= @user.decomposing %></li>
+    <li>Number of Limbs Missing: <%= @user.limbs_missing %></li>
+ </ul> 
+</div>
+
+<%= form_for @tweet do |f| %>
+  <%= f.text_field :message %>
+  <%= f.submit "Tweet" %>
+<% end %>
+
+<div id="wall">
+  <h1><%= @user.email %>'s wall</h1>
+  <% @tweets.each do |tweet| %>
+    <p> 
+      <%= link_to tweet.user.email, tweet.user %>:
+      <%= tweet.message %> 
+    </p>
+  <% end %>
+</div>
