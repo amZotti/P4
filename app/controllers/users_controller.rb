@@ -20,7 +20,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @tweet = Tweet.new
-    @tweets = @user.tweets
+    @tweets = @user.timeline
   end
 
   def edit

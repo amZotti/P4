@@ -2,15 +2,16 @@
   <h3>Welcome <%= current_user.email %>!</h3>
   <img src="<%= current_user.url %>" height=130 width=100>
   <ul>
-  <%= link_to "Update information", edit_user_path(current_user) %>
+    <%= link_to "Update information", edit_user_path(current_user) %>
     <li>Location: <%= current_user.location %></li>
     <li>Decomposing: <%= current_user.decomposing %></li>
     <li>Number of Limbs Missing: <%= current_user.limbs_missing %></li>
- </ul> 
+  </ul> 
 </div>
 
 <%= form_for @tweet do |f| %>
   <%= f.text_field :message %>
+  <%= f.hidden_field :recipient_id, value: current_user.id %>
   <%= f.submit "Tweet" %>
 <% end %>
 
@@ -18,8 +19,8 @@
   <h1>Your wall</h1>
   <% @tweets.each do |tweet| %>
     <p> 
-      <%= link_to tweet.user.email, tweet.user %>:
-      <%= tweet.message %> 
-    </p>
-  <% end %>
+  <%= link_to tweet.user.email, tweet.user %>:
+  <%= tweet.message %> 
+  </p>
+<% end %>
 </div>

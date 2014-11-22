@@ -11,6 +11,7 @@
 
 <%= form_for @tweet do |f| %>
   <%= f.text_field :message %>
+  <%= f.hidden_field :recipient_id, value: @user.id %>
   <%= f.submit "Tweet" %>
 <% end %>
 
