@@ -3,13 +3,14 @@ class UsersController < ApplicationController
   before_action :validate_user, only: [:edit, :update]
 
   def update
-    user = current_user.update(user_params)
-    if user
+    current_user.update(user_params)
+    if current_user.errors.empty?
       flash[:notice] = "Update Successful"
+      redirect_to "/"
     else
       flash[:notice] = "Update Failed"
+      render :edit
     end
-    redirect_to "/"
   end
 
   def new

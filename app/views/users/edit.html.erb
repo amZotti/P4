@@ -1,3 +1,10 @@
+<% if current_user.errors.any? %>
+  <h1><%= pluralize(current_user.errors.count, 'Error') %>
+  <% current_user.errors.full_messages.each do |error| %>
+    <h2><%= error %></h2>
+  <% end %>
+<% end %>
+
 <%= form_for current_user do |f| %>
   <%= f.label :location, "Location: " %>
   <%= f.text_field :location %>
