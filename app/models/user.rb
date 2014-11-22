@@ -6,4 +6,5 @@ class User < ActiveRecord::Base
   validates :url, length: { in: 5..100 }
 
   has_many :tweets, dependent: :destroy
+  has_many :tweetable
 end

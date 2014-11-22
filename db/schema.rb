@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141122035620) do
+ActiveRecord::Schema.define(version: 20141122173839) do
 
   create_table "searches", force: true do |t|
     t.string   "query",      null: false
@@ -20,10 +20,11 @@ ActiveRecord::Schema.define(version: 20141122035620) do
   end
 
   create_table "tweets", force: true do |t|
-    t.string   "message",    null: false
-    t.integer  "user_id",    null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "message",      null: false
+    t.integer  "user_id",      null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.integer  "recipient_id", null: false
   end
 
   create_table "users", force: true do |t|
