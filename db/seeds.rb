@@ -1,7 +1,17 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+User.destroy_all
+
+User.create!([{
+  email: "zombifyYourMom@brains.eu",
+  location: "Zombie London",
+  url: "http://i.ytimg.com/vi/UB5-Tst0wik/hqdefault.jpg"
+},
+{
+  email: "doesNOTtasteLikeBrains@brains.eu",
+  location: "Zombie London",
+  url: "http://i.vimeocdn.com/video/439873851_1280x720.jpg"
+},
+{
+  email: "EuroZomb521@brains.eu",
+  location: "Zombie Europe",
+  url: "https://zombiegames01.files.wordpress.com/2010/11/dead_state_render_18.jpg"
+}])
