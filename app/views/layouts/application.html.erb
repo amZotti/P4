@@ -9,19 +9,20 @@
 <body>
 <h2><%= flash[:notice] %></h2>
 
-<%= link_to "Home", "/" %>
 
 <% if signed_in? %>
+  <%= link_to "Home", "/" %>
   <%= link_to "Sign out", session_path, method: :delete %>
+  <%= form_tag("/searches", method: "post") do %>
+    <%= text_field_tag :query %>
+    <%= submit_tag "Search" %>
+  <% end %>
+
 <% else %>
   <%= link_to "Sign in", new_session_path %>
   <%= link_to "Sign up", new_user_path %>
 <% end %>
 
-<%= form_tag("/searches", method: "post") do %>
-  <%= text_field_tag :query %>
-  <%= submit_tag "Search" %>
-<% end %>
 
 <%= yield %>
 
