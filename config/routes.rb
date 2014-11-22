@@ -4,6 +4,7 @@ require "monban/constraints/signed_out"
 Twitter4Zombies::Application.routes.draw do
   constraints Monban::Constraints::SignedIn.new do
     root "dashboards#show", as: :dashboard
+    resources :users, only: [:edit, :update]
     resource :session, only: [:destroy]
     resource :tweets, only: [:create]
     resource :searches, only: [:create]

@@ -1,0 +1,18 @@
+<%= form_for current_user do |f| %>
+  <%= f.label :location, "Location: " %>
+  <%= f.text_field :location %>
+  <br>
+  <%= f.label :decomposing, "Decomposing: " %>
+  <%= f.label :decomposing, "true" %>
+  <%= f.radio_button :decomposing, true %>
+  <%= f.label :decomposing, "false" %>
+  <%= f.radio_button :decomposing, false %>
+  <br>
+  <%= f.label :limbs_missing, "Number of Missing Limbs: " %>
+  <%= f.number_field :limbs_missing %>
+  <br>
+  <%= f.label :url, "Profile Picture URL: " %>
+  <%= f.url_field :url %>
+  <br>
+  <%= f.submit "Update information" %>
+<% end %>

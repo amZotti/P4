@@ -7,6 +7,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<h2><%= flash[:notice] %></h2>
 
 <% if signed_in? %>
   <%= link_to "Sign out", session_path, method: :delete %>

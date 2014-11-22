@@ -1,5 +1,6 @@
 You are logged in!
 
+<%= link_to "Update information", edit_user_path(current_user) %>
 
 <%= form_for @tweet do |f| %>
   <%= f.text_field :message %>
