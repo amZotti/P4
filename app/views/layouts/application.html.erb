@@ -9,6 +9,12 @@
 <body>
 <h2><%= flash[:notice] %></h2>
 
+
+<%= form_tag("/searches", method: "post") do %>
+  <%= text_field_tag :query %>
+  <%= submit_tag "Search" %>
+<% end %>
+
 <% if signed_in? %>
   <%= link_to "Sign out", session_path, method: :delete %>
 <% else %>
