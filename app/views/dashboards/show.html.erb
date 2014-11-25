@@ -6,7 +6,7 @@
     <li>Location: <%= current_user.location %></li>
     <li>Decomposing: <%= current_user.decomposing %></li>
     <li>Number of Limbs Missing: <%= current_user.limbs_missing %></li>
-  </ul> 
+  </ul>
 </div>
 
 <%= form_for @tweet do |f| %>
@@ -18,9 +18,21 @@
 <div id="wall">
   <h1>Your wall</h1>
   <% @tweets.each do |tweet| %>
-    <p> 
+    <p>
   <%= link_to tweet.user.email, tweet.user %>:
-  <%= tweet.message %> 
+  <%= tweet.message %>
   </p>
 <% end %>
+</div>
+
+<div id="possible-friends">
+  <h3>Maybe you know...
+  <% @possible_friends.each do | possible_friend | %>
+    <div class="possible-friend">
+      <img src="<%= possible_friend.url %>" height=130 width=100>
+      <br>
+      <%= link_to possible_friend.email, user_path(possible_friend) %>
+    </div>
+  <% end %>
+
 </div>

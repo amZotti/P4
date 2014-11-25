@@ -10,4 +10,12 @@ class User < ActiveRecord::Base
   def timeline
     Tweet.where(recipient_id: id).order(created_at: :desc)
   end
+
+  def possible_friends
+    User.all_except(self).sample(3)
+  end
+
+  def self.all_except(user)
+    where.not(id: user)
+  end
 end
