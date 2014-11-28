@@ -1,5 +1,10 @@
 body {
   background: #C0DEED;
+  background-image: url(http://d20m4dvzhiuv61.cloudfront.net/assets/bg-body-3a1d6e7921cb2e11584ad84371a73188.jpg), no-repeat;
+}
+
+a {
+  text-decoration: none;
 }
 
 #possible-friends {
@@ -17,4 +22,17 @@ body {
 
 img {
   border-radius: 50px;
+}
+
+#wall {
+  margin: 0 auto 0 auto;
+  text-align: center;
+}
+
+#home-nav form {
+  display: inline;
+}
+
+#home-nav {
+  text-align: center;
 }

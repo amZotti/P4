@@ -9,18 +9,18 @@
   </ul>
 </div>
 
-<%= form_for @tweet do |f| %>
-  <%= f.text_field :message %>
-  <%= f.hidden_field :recipient_id, value: current_user.id %>
-  <%= f.submit "Tweet" %>
-<% end %>
-
 <div id="wall">
   <h1>Your wall</h1>
+  <%= form_for @tweet do |f| %>
+    <%= f.text_field :message %>
+    <%= f.hidden_field :recipient_id, value: current_user.id %>
+    <%= f.submit "Tweet" %>
+  <% end %>
+
   <% @tweets.each do |tweet| %>
-    <p>
-  <%= link_to tweet.user.email, tweet.user %>:
-  <%= tweet.message %>
+  <p>
+    <%= link_to tweet.user.email, tweet.user %>:
+    <%= tweet.message %>
   </p>
 <% end %>
 </div>
