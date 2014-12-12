@@ -5,6 +5,13 @@ class TweetsController < ApplicationController
     redirect_to "/"
   end
 
+  def destroy
+    @tweet = Tweet.find(params[:id]) 
+    if @tweet.is_destroyable? (current_user.id)
+      @tweet.destroy
+    end
+  end
+
   private
 
   def tweet_params

@@ -21,6 +21,7 @@
   <p>
     <%= link_to tweet.user.email, tweet.user %>:
     <%= tweet.message %>
+    <%= button_to "Delete tweet", tweet_path(tweet), method: :delete %>
   </p>
 <% end %>
 </div>

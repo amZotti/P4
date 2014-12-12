@@ -6,7 +6,7 @@ Twitter4Zombies::Application.routes.draw do
     root "dashboards#show", as: :dashboard
     resources :users, only: [:edit, :update, :show]
     resource :session, only: [:destroy]
-    resource :tweets, only: [:create]
+    resources :tweets, only: [:create, :destroy]
     resource :searches, only: [:create]
   end
 
