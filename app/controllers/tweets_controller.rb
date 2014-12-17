@@ -10,6 +10,7 @@ class TweetsController < ApplicationController
     if @tweet.is_destroyable? (current_user.id)
       @tweet.destroy
     end
+    redirect_to "/"
   end
 
   private
